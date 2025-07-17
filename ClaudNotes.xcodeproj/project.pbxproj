@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84001FE62E2903630060F6B4 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FE52E2903630060F6B4 /* Auth */; };
+		84001FE82E2903630060F6B4 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FE72E2903630060F6B4 /* Functions */; };
+		84001FEA2E2903630060F6B4 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FE92E2903630060F6B4 /* PostgREST */; };
+		84001FEC2E2903630060F6B4 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FEB2E2903630060F6B4 /* Realtime */; };
+		84001FEE2E2903630060F6B4 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FED2E2903630060F6B4 /* Storage */; };
+		84001FF02E2903630060F6B4 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FEF2E2903630060F6B4 /* Supabase */; };
+		84001FF92E2916A30060F6B4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FF82E2916A30060F6B4 /* FirebaseAuth */; };
+		84001FFB2E2916A30060F6B4 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FFA2E2916A30060F6B4 /* FirebaseCore */; };
+		84001FFD2E2916A30060F6B4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FFC2E2916A30060F6B4 /* FirebaseFirestore */; };
+		84001FFF2E2916A30060F6B4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 84001FFE2E2916A30060F6B4 /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8477BAA92E24C54F0009270E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8477BA932E24C54C0009270E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8477BA9A2E24C54C0009270E;
+			remoteInfo = ClaudNotes;
+		};
+		8477BAB32E24C54F0009270E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8477BA932E24C54C0009270E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8477BA9A2E24C54C0009270E;
+			remoteInfo = ClaudNotes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8477BA9B2E24C54C0009270E /* ClaudNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClaudNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8477BAA82E24C54F0009270E /* ClaudNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClaudNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8477BAB22E24C54F0009270E /* ClaudNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClaudNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8477BA9D2E24C54C0009270E /* ClaudNotes */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ClaudNotes;
+			sourceTree = "<group>";
+		};
+		8477BAAB2E24C54F0009270E /* ClaudNotesTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ClaudNotesTests;
+			sourceTree = "<group>";
+		};
+		8477BAB52E24C54F0009270E /* ClaudNotesUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ClaudNotesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8477BA982E24C54C0009270E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84001FEA2E2903630060F6B4 /* PostgREST in Frameworks */,
+				84001FE82E2903630060F6B4 /* Functions in Frameworks */,
+				84001FF02E2903630060F6B4 /* Supabase in Frameworks */,
+				84001FFF2E2916A30060F6B4 /* FirebaseStorage in Frameworks */,
+				84001FE62E2903630060F6B4 /* Auth in Frameworks */,
+				84001FEE2E2903630060F6B4 /* Storage in Frameworks */,
+				84001FFD2E2916A30060F6B4 /* FirebaseFirestore in Frameworks */,
+				84001FF92E2916A30060F6B4 /* FirebaseAuth in Frameworks */,
+				84001FFB2E2916A30060F6B4 /* FirebaseCore in Frameworks */,
+				84001FEC2E2903630060F6B4 /* Realtime in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8477BAA52E24C54F0009270E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8477BAAF2E24C54F0009270E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8477BA922E24C54C0009270E = {
+			isa = PBXGroup;
+			children = (
+				8477BA9D2E24C54C0009270E /* ClaudNotes */,
+				8477BAAB2E24C54F0009270E /* ClaudNotesTests */,
+				8477BAB52E24C54F0009270E /* ClaudNotesUITests */,
+				8477BA9C2E24C54C0009270E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8477BA9C2E24C54C0009270E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8477BA9B2E24C54C0009270E /* ClaudNotes.app */,
+				8477BAA82E24C54F0009270E /* ClaudNotesTests.xctest */,
+				8477BAB22E24C54F0009270E /* ClaudNotesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8477BA9A2E24C54C0009270E /* ClaudNotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8477BABC2E24C54F0009270E /* Build configuration list for PBXNativeTarget "ClaudNotes" */;
+			buildPhases = (
+				8477BA972E24C54C0009270E /* Sources */,
+				8477BA982E24C54C0009270E /* Frameworks */,
+				8477BA992E24C54C0009270E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8477BA9D2E24C54C0009270E /* ClaudNotes */,
+			);
+			name = ClaudNotes;
+			packageProductDependencies = (
+				84001FE52E2903630060F6B4 /* Auth */,
+				84001FE72E2903630060F6B4 /* Functions */,
+				84001FE92E2903630060F6B4 /* PostgREST */,
+				84001FEB2E2903630060F6B4 /* Realtime */,
+				84001FED2E2903630060F6B4 /* Storage */,
+				84001FEF2E2903630060F6B4 /* Supabase */,
+				84001FF82E2916A30060F6B4 /* FirebaseAuth */,
+				84001FFA2E2916A30060F6B4 /* FirebaseCore */,
+				84001FFC2E2916A30060F6B4 /* FirebaseFirestore */,
+				84001FFE2E2916A30060F6B4 /* FirebaseStorage */,
+			);
+			productName = ClaudNotes;
+			productReference = 8477BA9B2E24C54C0009270E /* ClaudNotes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8477BAA72E24C54F0009270E /* ClaudNotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8477BABF2E24C54F0009270E /* Build configuration list for PBXNativeTarget "ClaudNotesTests" */;
+			buildPhases = (
+				8477BAA42E24C54F0009270E /* Sources */,
+				8477BAA52E24C54F0009270E /* Frameworks */,
+				8477BAA62E24C54F0009270E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8477BAAA2E24C54F0009270E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8477BAAB2E24C54F0009270E /* ClaudNotesTests */,
+			);
+			name = ClaudNotesTests;
+			packageProductDependencies = (
+			);
+			productName = ClaudNotesTests;
+			productReference = 8477BAA82E24C54F0009270E /* ClaudNotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8477BAB12E24C54F0009270E /* ClaudNotesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8477BAC22E24C54F0009270E /* Build configuration list for PBXNativeTarget "ClaudNotesUITests" */;
+			buildPhases = (
+				8477BAAE2E24C54F0009270E /* Sources */,
+				8477BAAF2E24C54F0009270E /* Frameworks */,
+				8477BAB02E24C54F0009270E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8477BAB42E24C54F0009270E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8477BAB52E24C54F0009270E /* ClaudNotesUITests */,
+			);
+			name = ClaudNotesUITests;
+			packageProductDependencies = (
+			);
+			productName = ClaudNotesUITests;
+			productReference = 8477BAB22E24C54F0009270E /* ClaudNotesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8477BA932E24C54C0009270E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					8477BA9A2E24C54C0009270E = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					8477BAA72E24C54F0009270E = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = 8477BA9A2E24C54C0009270E;
+					};
+					8477BAB12E24C54F0009270E = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = 8477BA9A2E24C54C0009270E;
+					};
+				};
+			};
+			buildConfigurationList = 8477BA962E24C54C0009270E /* Build configuration list for PBXProject "ClaudNotes" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8477BA922E24C54C0009270E;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				84001FE42E2903630060F6B4 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				84001FF72E2916A30060F6B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8477BA9C2E24C54C0009270E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8477BA9A2E24C54C0009270E /* ClaudNotes */,
+				8477BAA72E24C54F0009270E /* ClaudNotesTests */,
+				8477BAB12E24C54F0009270E /* ClaudNotesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8477BA992E24C54C0009270E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8477BAA62E24C54F0009270E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8477BAB02E24C54F0009270E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8477BA972E24C54C0009270E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8477BAA42E24C54F0009270E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8477BAAE2E24C54F0009270E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8477BAAA2E24C54F0009270E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8477BA9A2E24C54C0009270E /* ClaudNotes */;
+			targetProxy = 8477BAA92E24C54F0009270E /* PBXContainerItemProxy */;
+		};
+		8477BAB42E24C54F0009270E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8477BA9A2E24C54C0009270E /* ClaudNotes */;
+			targetProxy = 8477BAB32E24C54F0009270E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8477BABA2E24C54F0009270E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Z5WPKCL9SX;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8477BABB2E24C54F0009270E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Z5WPKCL9SX;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8477BABD2E24C54F0009270E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z5WPKCL9SX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClaudNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8477BABE2E24C54F0009270E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z5WPKCL9SX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClaudNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8477BAC02E24C54F0009270E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z5WPKCL9SX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClaudNotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClaudNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClaudNotes";
+			};
+			name = Debug;
+		};
+		8477BAC12E24C54F0009270E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z5WPKCL9SX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClaudNotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClaudNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClaudNotes";
+			};
+			name = Release;
+		};
+		8477BAC32E24C54F0009270E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z5WPKCL9SX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClaudNotesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClaudNotes;
+			};
+			name = Debug;
+		};
+		8477BAC42E24C54F0009270E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z5WPKCL9SX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClaudNotesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClaudNotes;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8477BA962E24C54C0009270E /* Build configuration list for PBXProject "ClaudNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8477BABA2E24C54F0009270E /* Debug */,
+				8477BABB2E24C54F0009270E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8477BABC2E24C54F0009270E /* Build configuration list for PBXNativeTarget "ClaudNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8477BABD2E24C54F0009270E /* Debug */,
+				8477BABE2E24C54F0009270E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8477BABF2E24C54F0009270E /* Build configuration list for PBXNativeTarget "ClaudNotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8477BAC02E24C54F0009270E /* Debug */,
+				8477BAC12E24C54F0009270E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8477BAC22E24C54F0009270E /* Build configuration list for PBXNativeTarget "ClaudNotesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8477BAC32E24C54F0009270E /* Debug */,
+				8477BAC42E24C54F0009270E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84001FE42E2903630060F6B4 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+		84001FF72E2916A30060F6B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84001FE52E2903630060F6B4 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FE42E2903630060F6B4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		84001FE72E2903630060F6B4 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FE42E2903630060F6B4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		84001FE92E2903630060F6B4 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FE42E2903630060F6B4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		84001FEB2E2903630060F6B4 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FE42E2903630060F6B4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		84001FED2E2903630060F6B4 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FE42E2903630060F6B4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		84001FEF2E2903630060F6B4 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FE42E2903630060F6B4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		84001FF82E2916A30060F6B4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FF72E2916A30060F6B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		84001FFA2E2916A30060F6B4 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FF72E2916A30060F6B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		84001FFC2E2916A30060F6B4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FF72E2916A30060F6B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		84001FFE2E2916A30060F6B4 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84001FF72E2916A30060F6B4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8477BA932E24C54C0009270E /* Project object */;
+}
