@@ -71,6 +71,10 @@ class NotesViewModel: ObservableObject {
         notes.filter { $0.isDeleted }
     }
     
+    var isFirebaseAvailable: Bool {
+        FirebaseService.shared.currentUserId != nil
+    }
+    
     func filteredNotes(for filter: NoteFilter = .all) -> [Note] {
         let filteredByStatus: [Note]
         
@@ -107,6 +111,157 @@ class NotesViewModel: ObservableObject {
         // Create sample content if there are no notes or folders
         if notes.isEmpty {
             createSampleContent()
+        }
+        
+        // Initialize Firebase integration if user is authenticated
+        initializeFirebaseIfNeeded()
+    }
+    
+    /// Initialize Firebase integration if user is authenticated
+    func initializeFirebaseIfNeeded() {
+        // Check if user is authenticated and initialize Firebase
+        if FirebaseService.shared.currentUserId != nil {
+            // Initialize Firebase integration
+            logger.info("Initializing Firebase integration")
+            
+            // Set up Firebase listeners to sync with NotesFirebaseService
+            setupFirebaseSync()
+        }
+    }
+    
+    /// Set up Firebase synchronization
+    private func setupFirebaseSync() {
+        logger.info("Setting up Firebase synchronization...")
+        
+        // Initialize the NotesFirebaseService for the authenticated user
+        NotesFirebaseService.shared.initializeForUser()
+        
+        // Listen to Firebase changes and update local data
+        Task { @MainActor in
+            // Sync existing local data to Firebase
+            await syncLocalDataToFirebase()
+            
+            // Set up real-time listeners
+            setupFirebaseListeners()
+            
+            logger.info("Firebase synchronization setup complete")
+        }
+    }
+    
+    /// Sync local data to Firebase
+    private func syncLocalDataToFirebase() async {
+        logger.info("Starting local data sync to Firebase")
+        
+        do {
+            // Sync folders first (notes depend on folders)
+            for folder in folders {
+                try await NotesFirebaseService.shared.createFolder(folder)
+            }
+            
+            // Sync tags
+            for tag in tags {
+                try await NotesFirebaseService.shared.createTag(tag)
+            }
+            
+            // Sync notes
+            for note in notes.filter({ !$0.isDeleted }) {
+                try await NotesFirebaseService.shared.createNote(note)
+            }
+            
+            logger.info("Successfully synced local data to Firebase")
+            
+        } catch {
+            logger.error("Failed to sync local data to Firebase: \(error.localizedDescription)")
+        }
+    }
+    
+    /// Set up Firebase real-time listeners
+    private func setupFirebaseListeners() {
+        // Listen to Firebase changes and update local arrays
+        NotesFirebaseService.shared.$notes
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] firebaseNotes in
+                self?.notes = firebaseNotes
+            }
+            .store(in: &cancellables)
+        
+        NotesFirebaseService.shared.$folders
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] firebaseFolders in
+                self?.folders = firebaseFolders
+            }
+            .store(in: &cancellables)
+        
+        NotesFirebaseService.shared.$tags
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] firebaseTags in
+                self?.tags = firebaseTags
+            }
+            .store(in: &cancellables)
+    }
+    
+    // MARK: - Firebase Integration Methods
+    
+    /// Create note with Firebase
+    func createNoteWithFirebase(title: String = "New Note", folderId: UUID? = nil) async {
+        logger.info("Attempting to create note with Firebase. User ID: \(FirebaseService.shared.currentUserId ?? "nil")")
+        
+        do {
+            let note = try await NotesFirebaseService.shared.createNote(title: title, folderId: folderId)
+            selectedNote = note
+            logger.info("Successfully created note with Firebase: \(note.title)")
+        } catch {
+            logger.error("Failed to create note with Firebase: \(error.localizedDescription)")
+            // Fallback to local creation
+            createNote(in: folders.first(where: { $0.id == folderId }))
+        }
+    }
+    
+    /// Update note with Firebase
+    func updateNoteWithFirebase(_ note: Note) async {
+        do {
+            try await NotesFirebaseService.shared.updateNote(note)
+            logger.debug("Updated note with Firebase: \(note.title)")
+        } catch {
+            logger.error("Failed to update note with Firebase: \(error.localizedDescription)")
+            // Fallback to local update
+            updateNote(note)
+        }
+    }
+    
+    /// Delete note with Firebase
+    func deleteNoteWithFirebase(_ note: Note) async {
+        do {
+            try await NotesFirebaseService.shared.softDeleteNote(note.id)
+            logger.info("Deleted note with Firebase: \(note.title)")
+        } catch {
+            logger.error("Failed to delete note with Firebase: \(error.localizedDescription)")
+            // Fallback to local deletion
+            softDeleteNote(note)
+        }
+    }
+    
+    /// Pin/unpin note with Firebase
+    func togglePinNoteWithFirebase(_ note: Note) async {
+        do {
+            try await NotesFirebaseService.shared.togglePinNote(note.id)
+            logger.debug("Toggled pin for note with Firebase: \(note.title)")
+        } catch {
+            logger.error("Failed to toggle pin with Firebase: \(error.localizedDescription)")
+            // Fallback to local operation
+            pinNote(note)
+        }
+    }
+    
+    /// Move note to folder with Firebase
+    func moveNoteWithFirebase(_ note: Note, to folder: Folder?) async {
+        do {
+            try await NotesFirebaseService.shared.moveNote(note.id, to: folder?.id)
+            logger.debug("Moved note with Firebase: \(note.title)")
+        } catch {
+            logger.error("Failed to move note with Firebase: \(error.localizedDescription)")
+            // Fallback to local operation
+            moveNote(note, to: folder)
         }
     }
     

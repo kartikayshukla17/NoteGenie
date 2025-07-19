@@ -169,6 +169,16 @@ struct Block: Codable, Identifiable, Hashable, Sendable {
         self.updatedAt = Date()
     }
     
+    // Firebase-compatible initializer
+    init(id: UUID, type: BlockType, content: String, metadata: BlockMetadata? = nil, createdAt: Date, updatedAt: Date) {
+        self.id = id
+        self.type = type
+        self.content = content
+        self.metadata = metadata
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+    }
+    
     // Implement Hashable
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

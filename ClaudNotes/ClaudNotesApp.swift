@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct ClaudNotesApp: App {
+    
+    init() {
+        FirebaseConfig.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

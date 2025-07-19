@@ -1,0 +1,102 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Users can only access their own user document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // User's data collections (notes, folders, tags)
+      match /data/{collection}/{document} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        
+        // Validation rules for notes
+        allow create: if collection == "notes" && validateNoteData(request.resource.data);
+        allow update: if collection == "notes" && validateNoteData(request.resource.data);
+        
+        // Validation rules for folders
+        allow create: if collection == "folders" && validateFolderData(request.resource.data);
+        allow update: if collection == "folders" && validateFolderData(request.resource.data);
+        
+        // Validation rules for tags
+        allow create: if collection == "tags" && validateTagData(request.resource.data);
+        allow update: if collection == "tags" && validateTagData(request.resource.data);
+      }
+    }
+    
+    // Helper functions for data validation
+    function validateNoteData(data) {
+      return data.keys().hasAll(['id', 'userId', 'title', 'contentBlocks', 'createdAt', 'updatedAt', 'isPinned', 'isDeleted', 'tagIds']) &&
+             data.id is string &&
+             data.userId is string &&
+             data.title is string &&
+             data.title.size() <= 100 &&
+             data.contentBlocks is list &&
+             data.contentBlocks.size() <= 50 &&
+             data.createdAt is timestamp &&
+             data.updatedAt is timestamp &&
+             data.isPinned is bool &&
+             data.isDeleted is bool &&
+             data.tagIds is list &&
+             data.tagIds.size() <= 20;
+    }
+    
+    function validateFolderData(data) {
+      return data.keys().hasAll(['id', 'userId', 'name', 'createdAt', 'updatedAt']) &&
+             data.id is string &&
+             data.userId is string &&
+             data.name is string &&
+             data.name.size() <= 50 &&
+             data.createdAt is timestamp &&
+             data.updatedAt is timestamp;
+    }
+    
+    function validateTagData(data) {
+      return data.keys().hasAll(['id', 'userId', 'name', 'colorHex', 'createdAt', 'updatedAt']) &&
+             data.id is string &&
+             data.userId is string &&
+             data.name is string &&
+             data.name.size() <= 30 &&
+             data.colorHex is string &&
+             data.colorHex.matches('^#[0-9A-Fa-f]{6}$') &&
+             data.createdAt is timestamp &&
+             data.updatedAt is timestamp;
+    }
+    
+    // Rate limiting: Prevent excessive writes
+    function isRateLimited() {
+      return request.time < resource.data.updatedAt + duration.value(1, 's');
+    }
+    
+    // Deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+// Firebase Storage Rules
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Users can only access their own files
+    match /users/{userId}/{allPaths=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // File size limits
+      allow write: if request.resource.size < 50 * 1024 * 1024; // 50MB max
+      
+      // File type restrictions
+      allow write: if request.resource.contentType.matches('image/.*') ||
+                      request.resource.contentType.matches('application/pdf') ||
+                      request.resource.contentType.matches('text/.*') ||
+                      request.resource.contentType.matches('audio/.*') ||
+                      request.resource.contentType.matches('video/.*');
+    }
+    
+    // Deny all other access
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

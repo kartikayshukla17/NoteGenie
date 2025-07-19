@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>165665226174-06so5rvdhi5dj1bpaob6s1on08j3fhkn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.165665226174-06so5rvdhi5dj1bpaob6s1on08j3fhkn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBOAnAlp25m_z68_UsMn9NDnBEvIWvW_LM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>165665226174</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.ClaudNotes</string>
+	<key>PROJECT_ID</key>
+	<string>claudnotes</string>
+	<key>STORAGE_BUCKET</key>
+	<string>claudnotes.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:165665226174:ios:8a4f8d7bfbee2b64f44def</string>
+	<key>DATABASE_URL</key>
+	<string>https://claudnotes-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

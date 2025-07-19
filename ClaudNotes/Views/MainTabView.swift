@@ -10,9 +10,12 @@ import CoreHaptics
 
 struct MainTabView: View {
     @EnvironmentObject var notesViewModel: NotesViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     @State private var showingSettings = false
     @State private var showingCreateOptions = false
     @State private var showingInsights = false
+    @State private var showingProfile = false
+    @State private var showingSyncStatus = false
     @State private var columnVisibility: NavigationSplitViewVisibility = .automatic
     @State private var searchText = ""
     @State private var hapticEngine: CHHapticEngine?
@@ -28,10 +31,28 @@ struct MainTabView: View {
             }
             .navigationTitle("ClaudNotes")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showingProfile = true
+                    }) {
+                        ProfileAvatarView(
+                            imageURL: authViewModel.currentUser?.avatarURL,
+                            initials: authViewModel.currentUser?.initials ?? "U",
+                            size: 32
+                        )
+                    }
+                }
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Button(action: {
-                            notesViewModel.createNote()
+                            Task {
+                                if notesViewModel.isFirebaseAvailable {
+                                    await notesViewModel.createNoteWithFirebase()
+                                } else {
+                                    notesViewModel.createNote()
+                                }
+                            }
                         }) {
                             Label("New Note", systemImage: "square.and.pencil")
                         }
@@ -201,6 +222,9 @@ struct MainTabView: View {
                 appearAnimation = true
             }
         }
+        .sheet(isPresented: $showingProfile) {
+            ProfileView(authViewModel: authViewModel)
+        }
         .sheet(isPresented: $showingSettings) {
             SettingsView()
         }
@@ -209,6 +233,19 @@ struct MainTabView: View {
         }
         .sheet(isPresented: $showingInsights) {
             InsightsView()
+        }
+        .sheet(isPresented: $showingSyncStatus) {
+            DetailedSyncStatusView()
+        }
+        .overlay(alignment: .bottom) {
+            // Sync status indicator
+            if authViewModel.userSession != nil {
+                SyncStatusView()
+                    .padding(.bottom, 20)
+                    .onTapGesture {
+                        showingSyncStatus = true
+                    }
+            }
         }
     }
     
@@ -248,4 +285,5 @@ struct MainTabView: View {
 #Preview {
     MainTabView()
         .environmentObject(NotesViewModel())
+        .environmentObject(AuthViewModel())
 }
